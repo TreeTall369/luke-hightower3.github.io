@@ -12,8 +12,11 @@
  */
 function printArrayValues(array) {
   // YOUR CODE BELOW HERE //
-  
-  
+  // create for loop over input array
+  for (let index = 0; index < array.length; index++){
+    // use braket notation to log items to console
+    console.log(array[index])
+  }
   
   
   // YOUR CODE ABOVE HERE //
@@ -25,9 +28,11 @@ function printArrayValues(array) {
  */
 function printArrayValuesInReverse(array) {
   // YOUR CODE BELOW HERE //
-  
-  
-  
+    // create for loop over input array that descends from high to low
+    for (let i = array.length - 1; i >= 0; i--){
+      // use braket notation to log items to console
+      console.log(array[i])
+    }
   
   // YOUR CODE ABOVE HERE //
 }
@@ -37,10 +42,15 @@ function printArrayValuesInReverse(array) {
  */
 function getObjectKeys(object) {
   // YOUR CODE BELOW HERE //
-  
-  
-  
-  
+  // declare open array
+  let array = []
+  // use for-in loop with input object
+  for (let key in object){
+    // push keys by way of key variable into array
+    array.push(key)
+  }
+  // return array
+  return array
   // YOUR CODE ABOVE HERE //
 }
 
@@ -50,10 +60,11 @@ function getObjectKeys(object) {
  */
 function printObjectKeys(object) {
   // YOUR CODE BELOW HERE //
-  
-  
-  
-  
+  // use for in loop to iterate over object
+  for (let key in object){
+   // log keys to console using just key variable
+  console.log(key)
+  }
   // YOUR CODE ABOVE HERE //
 }
 
@@ -62,10 +73,14 @@ function printObjectKeys(object) {
  */
 function getObjectValues(object) {
   // YOUR CODE BELOW HERE //
-  
-  
-  
-  
+  // declare open array
+  let array = []
+  // loop over object
+  for (let key in object){
+    array.push(object[key])
+  }
+  // return array
+  return array
   // YOUR CODE ABOVE HERE //
 }
 
@@ -75,10 +90,11 @@ function getObjectValues(object) {
  */
 function printObjectValues(object) {
   // YOUR CODE BELOW HERE //
-  
-  
-  
-  
+  // for in loop over object
+  for (let key in object){
+    // log values of object to console
+    console.log(object[key])
+  }
   // YOUR CODE ABOVE HERE //
 }
 
@@ -88,8 +104,13 @@ function printObjectValues(object) {
 function getObjectLength(object) {
   // YOUR CODE BELOW HERE //
   
-  
-  
+  let array = []
+  // loop over object
+  for (let key in object){
+    array.push(object[key])
+  }
+  // return array.length
+  return array.length
   
   // YOUR CODE ABOVE HERE //
 }
@@ -100,9 +121,17 @@ function getObjectLength(object) {
  */
 function printObjectValuesInReverse(object) {
   // YOUR CODE BELOW HERE //
-  
-  
-  
+  // declare open array to loop over later
+  let array = []
+  // loop over object
+  for (let key in object){
+    // push into array
+    array.push(object[key])
+  }
+  // create loop going high to low over array
+  for (let index = array.length - 1; index >= 0; index--){
+    console.log(array[index])
+  }
   
   // YOUR CODE ABOVE HERE //
 }
