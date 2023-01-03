@@ -35,10 +35,21 @@
 
 function greeter(hour) {
     // YOUR CODE BELOW HERE //
+    // i - number representing hour
+    // o - console.log() desired statement
+    // c - output is case senstive
+    // e - 
     
-    
-    
-    
+if(hour >= 22){
+    console.log('Good Night!')
+} else if (hour >= 17){
+    console.log('Good Evening!')
+} else if (hour >= 12){
+    console.log('Good Afternoon!')
+} else if (hour >= 0){
+    console.log('Good Morning!')
+}
+
     // YOUR CODE ABOVE HERE //
 }
 
