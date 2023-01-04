@@ -16,7 +16,7 @@ function isArray(value) {
     // YOUR CODE BELOW HERE //
     
     
-    
+    return Array.isArray(value)
     
     // YOUR CODE ABOVE HERE //
 }
@@ -31,10 +31,35 @@ function isArray(value) {
  */
 function isObject(value) {
     // YOUR CODE BELOW HERE //
-    
-    
-    
-    
+    // input will be random data type
+    // test what type of data it is
+    // use typeof operator to compare with 'string names of data types'
+  
+    if (typeof value === 'number'){
+        return false
+    } else if (typeof value === 'string'){
+        return false
+    } else if (typeof value === 'boolean'){
+        return false
+    } else if (typeof value === 'function'){
+        return false 
+    } else if (typeof value === 'undefined'){
+        return false
+    } else if (typeof value === 'object'){
+        // use Arra.isArray() method
+            if (Array.isArray(value) === true){
+                return false
+                // use instanceof operator 
+            } else if (value instanceof Date === true){
+                return false
+            } else if (value instanceof Object === false){
+                return false
+            } else if (value instanceof Object === true){
+                // having tested for all other possibilities this returns true
+                return true
+            }
+    }
+   
     // YOUR CODE ABOVE HERE //
 }
 
@@ -48,6 +73,30 @@ function isCollection(value) {
     // YOUR CODE BELOW HERE //
     
     
+    if (typeof value === 'number'){
+        return false
+    } else if (typeof value === 'string'){
+        return false
+    } else if (typeof value === 'boolean'){
+        return false
+    } else if (typeof value === 'function'){
+        return false 
+    } else if (typeof value === 'undefined'){
+        return false
+    } else if (typeof value === 'object'){
+        // use Array.isArray() method // if this is true return true -- means its a collection ie [] 
+            if (Array.isArray(value) === true){
+                return true
+                // use instanceof operator 
+            } else if (value instanceof Date === true){
+                return false
+            } else if (value instanceof Object === false){
+                return false
+            } else if (value instanceof Object === true){
+                // having tested for the other possibility this returns true once reached 
+                return true
+            }
+    }
     
     
     // YOUR CODE ABOVE HERE //
@@ -74,8 +123,32 @@ function isCollection(value) {
  */ 
 function typeOf(value) {
     // YOUR CODE BELOW HERE //
-    
-    
+    // use type of operator to find type, return type in string
+    if (typeof value === 'number'){
+        return 'number'
+    } else if (typeof value === 'string'){
+        return 'string'
+    } else if (typeof value === 'boolean'){
+        return 'boolean'
+    } else if (typeof value === 'function'){
+        return 'function'
+    } else if (typeof value === 'undefined'){
+        return 'undefined'
+    } else if (typeof value === 'object'){
+        // use Array.isArray() method 
+            if (Array.isArray(value) === true){
+                return 'array'
+                // use instanceof operator 
+            } else if (value instanceof Date === true){
+                return 'date'
+                // this test leave only 'null' as possible outcome
+            } else if (value instanceof Object === false){
+                return 'null'
+            } else if (value instanceof Object === true){
+                // having tested for the other possibility this returns true once reached 
+                return 'object'
+            }
+    }
     
     
     // YOUR CODE ABOVE HERE //
