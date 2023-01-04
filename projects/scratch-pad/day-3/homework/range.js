@@ -23,10 +23,23 @@
  */
 function range(start, end) {
     // YOUR CODE GOES BELOW HERE //
-    
-    
-    
-    
+    // declare open array
+    let array = []
+
+    if ( start > end ){
+        // loop high to low
+for (let index = start; index >= end; index--){
+    // push number into array
+    array.push(index)
+}
+    } else if ( start < end ){
+        // loop low to high
+for (let index = start; index <= end; index++){
+    // push number into array
+    array.push(index)
+}
+    }
+    return array
     // YOUR CODE GOES ABOVE HERE //
 }
 
