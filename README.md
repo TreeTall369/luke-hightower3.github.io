@@ -14,8 +14,6 @@
 
 9) type into terminal => os submit
 
----> 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
-
 ## save work to github repository
 
 1) in terminal => git add -A
