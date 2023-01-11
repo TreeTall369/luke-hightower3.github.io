@@ -124,6 +124,13 @@ function profileInfo(object) {
 //////////////////////////////////////////////////////////////////////
 
 function maybeNoises(object) {
+    if (!object.noises){
+        return 'there are no noises'
+    } else if (object.noises.length > 0){
+        return object.noises.join(' ')
+    } else if (object.noises.length === 0){
+        return 'there are no noises'
+    } 
 
 }
 
@@ -133,6 +140,21 @@ function maybeNoises(object) {
 
 function hasWord(string, word) {
 
+    let array = string.split(' ')
+    let flag = false
+
+for (let index = 0; index < array.length; index++){
+    if (array[index] === word){
+        flag = true
+    }
+}
+
+if (flag === true){
+    return true
+} else {
+    return false
+}
+
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -140,7 +162,8 @@ function hasWord(string, word) {
 //////////////////////////////////////////////////////////////////////
 
 function addFriend (name, object) {
-
+    object.friends.push(name)
+    return object
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -148,23 +171,50 @@ function addFriend (name, object) {
 //////////////////////////////////////////////////////////////////////
 
 function isFriend(name, object) {
+    
+    let flag = false;
 
+    if (!object.friends){
+        return false
+    }
+
+    for (let index = 0; index < object.friends.length; index++){
+        if(object.friends[index] === name){
+            flag = true
+        }
+    }
+    
+    return flag
 }
 
 //////////////////////////////////////////////////////////////////////
 // Function 13 - Non-Friends /////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-function nonFriends(name, array) {
-
-}
+function nonFriends(name, array){
+    let bunker = []
+    for (let index = 0; index < array.length; index++){
+      if (array[index].name !== name && array[index].friends.includes(name) === false){
+          bunker.push(array[index].name)
+      }
+    }
+    return bunker
+  }
 
 //////////////////////////////////////////////////////////////////////
 // Function 14 - Update Object ///////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
 function updateObject(object, key, value) {
+// if object.key does not exist create key and value in it
+// if object.key is there, update value
+if (!object[key]){
+    object[key] = value
+} else {
+    object[key] = value
+}
 
+return object
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -172,7 +222,15 @@ function updateObject(object, key, value) {
 //////////////////////////////////////////////////////////////////////
 
 function removeProperties(object, array) {
+let test = Object.keys(object)
 
+for (let index = 0; index < array.length; index++){
+    if (test.includes(array[index])){
+       delete object[array[index]]
+    }
+}
+
+return object
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -181,6 +239,23 @@ function removeProperties(object, array) {
 
 function dedup(array) {
 
+// array of characters, remove duplicates
+// if the index = the index prior then dont push that
+// if the index is != or 'new' then push into array
+// return array
+let lab = []
+for (let index = 0; index < array.length; index++){
+    if (index = 0){
+    lab.push(array[0])
+    } else if (index > 0 && index !== index - 1){
+    lab.push(array[index])
+    } 
+} 
+
+
+
+
+return lab
 }
 
 //////////////////////////////////////////////////////////////////////
