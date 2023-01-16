@@ -10,7 +10,9 @@ var _ = {};
 * START OF OUR LIBRARY!
 * Implement each function below its instructions
 */
-
+_.identity = function(value){
+    return value;
+}
 /** _.identity
 * Arguments:
 *   1) Any value
@@ -20,8 +22,33 @@ var _ = {};
 *   _.identity(5) === 5
 *   _.identity({a: "b"}) === {a: "b"}
 */
+_.typeOf = function(value){
 
-
+    if (typeof value === 'number'){
+    return 'number'
+} else if (typeof value === 'string'){
+    return 'string'
+} else if (typeof value === 'boolean'){
+    return 'boolean'
+} else if (typeof value === 'function'){
+    return 'function'
+} else if (typeof value === 'undefined'){
+    return 'undefined'
+} else if (typeof value === 'object'){
+    // use Arra.isArray() method
+        if (Array.isArray(value) === true){
+            return 'array'
+            // use instanceof operator 
+        } else if (value instanceof Date === true){
+            return 'date'
+        } else if (value instanceof Object === false){
+            return 'null'
+        } else if (value instanceof Object === true){
+            // having tested for all other possibilities this returns true
+            return 'object'
+        }
+}
+}
 /** _.typeOf
 * Arguments:
 *   1) Any value
@@ -42,7 +69,27 @@ var _ = {};
 * _.typeOf([1,2,3]) -> "array"
 */
 
+_.first = function(array, number){
+    let first = []
 
+    if (!Array.isArray(array)){
+        return []
+    } else if (!array){
+        return []
+    } else if (!number){
+        return array[0]
+    } else if (number <= 0){
+        return []
+    } else if (number <= array.length){
+        // for loop
+        for (let index = 0; index < number; index++){
+            first.push(array[index]) 
+        }
+        return first 
+    } else if (number > array.length){
+        return array
+    }
+}
 /** _.first
 * Arguments:
 *   1) An array
@@ -130,6 +177,23 @@ var _ = {};
 *      -> should log "a" "b" "c" to the console
 */
 
+_.each = function(collection, func){
+
+if (Array.isArray(collection)){
+
+    for (let index = 0; index < collection.length; index++){
+
+        func(collection[index], index, collection)
+
+    }
+} else {
+
+    for (let key in collection){
+        func(collection[key], key, collection)
+    }
+}
+
+}
 
 /** _.unique
 * Arguments:

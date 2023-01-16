@@ -243,19 +243,19 @@ function dedup(array) {
 // if the index = the index prior then dont push that
 // if the index is != or 'new' then push into array
 // return array
-let lab = []
-for (let index = 0; index < array.length; index++){
-    if (index = 0){
-    lab.push(array[0])
-    } else if (index > 0 && index !== index - 1){
-    lab.push(array[index])
-    } 
-} 
+// let lab = []
+// for (let index = 0; index < array.length; index++){
+//     if (index = 0){
+//     lab.push(array[0])
+//     } else if (index > 0 && index !== index - 1){
+//     lab.push(array[index])
+//     } 
+// } 
 
 
 
 
-return lab
+// return lab
 }
 
 //////////////////////////////////////////////////////////////////////
