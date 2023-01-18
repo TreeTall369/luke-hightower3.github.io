@@ -108,7 +108,24 @@ _.first = function(array, number){
 *   _.first(["a", "b", "c"], 2) -> ["a", "b"]
 */
 
+_.last = function(array, number){
+    let last = []
 
+    if (!Array.isArray(array)){
+        return []
+    } else if (!array){
+        return []
+    } else if (!number){
+        return array[array.length - 1]
+    } else if (number <= 0){
+        return []
+    } else if (number <= array.length){
+        // for loop
+        return array.slice(1)
+    } else if (number > array.length){
+        return array
+    }
+}
 /** _.last
 * Arguments:
 *   1) An array
@@ -126,6 +143,7 @@ _.first = function(array, number){
 *   _.last(["a", "b", "c"], 1) -> "c"
 *   _.last(["a", "b", "c"], 2) -> ["b", "c"]
 */
+
 
 
 /** _.indexOf
@@ -285,7 +303,44 @@ if (Array.isArray(collection)){
 *   _.pluck([{a: "one"}, {a: "two"}], "a") -> ["one", "two"]
 */
 
+_.every = function(collection, func){
+    if (Array.isArray(collection)){
+    if (func === undefined){
+            // no function argument
+            for (let index = 0; index < collection.length; index++){
+                // look for falsey
+                if(!collection[index]){
+                    return false
+                }
+            }
+    } else {
+        for (let index = 0; index < collection.length; index++){
+            if(!func(collection[index], index, collection)){
+                return false
+            }
+        }
 
+    }
+    } else {
+        if (func === undefined){
+            // no function argument
+            for (let key in collection){
+                // look for falsey
+                if(!collection[key]){
+                    return false
+                }
+            }
+    } else {
+        for (let key in collection){
+            if(!func(collection[key], key, collection)){
+                return false
+            }
+        }
+
+    }
+    }
+    return true
+}
 /** _.every
 * Arguments:
 *   1) A collection
@@ -348,7 +403,28 @@ if (Array.isArray(collection)){
 * Examples:
 *   _.reduce([1,2,3], function(previousSum, currentValue, currentIndex){ return previousSum + currentValue }, 0) -> 6
 */
+_.reduce = function(collection, func, seed){
+    let result
+    // determine if no seed
+    if (seed === undefined){
+        result = collection[0]
+        for (let index = 1; index < collection.length; index++){
+            result = func(result, collection[index], index)
+        }
 
+        // else there is a seed
+    } else {
+        result = seed;
+        for (let index = 0; index < collection.length; index++){
+            result = func(result, collection[index], index)
+        }
+    }
+
+    
+    
+
+return result;
+}
 
 /** _.extend
 * Arguments:
