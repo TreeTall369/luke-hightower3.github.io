@@ -384,7 +384,44 @@ _.every = function(collection, func){
 *   _.some([1,2,3], function(e){return e % 2 === 0}) -> true
 */
 
+_.some = function(collection, func){
+    if (Array.isArray(collection)){
+    if (func === undefined){
+            // no function argument
+            for (let index = 0; index < collection.length; index++){
+                // look for falsey
+                if(collection[index]){
+                    return true
+                }
+            }
+    } else {
+        for (let index = 0; index < collection.length; index++){
+            if(func(collection[index], index, collection)){
+                return true
+            }
+        }
 
+    }
+    } else {
+        if (func === undefined){
+            // no function argument
+            for (let key in collection){
+                // look for falsey
+                if(collection[key]){
+                    return true
+                }
+            }
+    } else {
+        for (let key in collection){
+            if(func(collection[key], key, collection)){
+                return true
+            }
+        }
+
+    }
+    }
+    return false
+}
 /** _.reduce
 * Arguments:
 *   1) An array
@@ -419,13 +456,9 @@ _.reduce = function(collection, func, seed){
             result = func(result, collection[index], index)
         }
     }
-
-    
-    
-
 return result;
 }
-
+ 
 /** _.extend
 * Arguments:
 *   1) An Object
