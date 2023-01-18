@@ -164,7 +164,13 @@ _.last = function(array, number){
 */
 
 _.indexOf = function(array, value){
-return index
+
+    for (let index = 0; index < array.length; index++){
+        if (array[index] === value){
+            return index
+        }
+    }
+    return -1
 }
 
 /** _.contains
@@ -184,9 +190,18 @@ return index
 
 _.contains = function(array, value){
 
-return true || false
-
+    if (value === undefined){
+        return false
+    } else {
+        for (let index = 0; index < array.length; index++){
+        if (array[index] === value){
+            return true
+        }
+        }
+    }
+    return false
 }
+
 
 
 /** _.each
@@ -234,8 +249,14 @@ if (Array.isArray(collection)){
 */
 
 _.unique = function(array){
+    let bank = []
 
-    return array
+    for (let index = 0; index < array.length; index++){
+       if (!bank.includes(array[index])){
+        bank.push(array[index])
+       }
+    }
+    return bank
 }
 
 /** _.filter
