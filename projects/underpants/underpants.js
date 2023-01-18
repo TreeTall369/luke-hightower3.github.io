@@ -10,9 +10,7 @@ var _ = {};
 * START OF OUR LIBRARY!
 * Implement each function below its instructions
 */
-_.identity = function(value){
-    return value;
-}
+
 /** _.identity
 * Arguments:
 *   1) Any value
@@ -22,6 +20,29 @@ _.identity = function(value){
 *   _.identity(5) === 5
 *   _.identity({a: "b"}) === {a: "b"}
 */
+_.identity = function(value){
+    return value;
+}
+/** _.typeOf
+* Arguments:
+*   1) Any value
+* Objectives:
+*   1) Return the type of <value> as a string
+*       Types are one of:
+*          - "string"
+*          - "array"
+*          - "object"
+*          - "undefined"
+*          - "number"
+*          - "boolean"
+*          - "null"
+*          - "function"
+* Examples:
+* _.typeOf(134) -> "number"
+* _.typeOf("javascript") -> "string"
+* _.typeOf([1,2,3]) -> "array"
+*/
+
 _.typeOf = function(value){
 
     if (typeof value === 'number'){
@@ -49,24 +70,22 @@ _.typeOf = function(value){
         }
 }
 }
-/** _.typeOf
+/** _.first
 * Arguments:
-*   1) Any value
+*   1) An array
+*   2) A number
 * Objectives:
-*   1) Return the type of <value> as a string
-*       Types are one of:
-*          - "string"
-*          - "array"
-*          - "object"
-*          - "undefined"
-*          - "number"
-*          - "boolean"
-*          - "null"
-*          - "function"
+*   1) If <array> is not an array, return []
+*   2) If <number> is not given or not a number, return just the first element in <array>.
+*   3) Otherwise, return the first <number> items of <array>
+* Edge Cases:
+*   1) What if <number> is negative?
+*   2) What if <number> is greater than <array>.length?
 * Examples:
-* _.typeOf(134) -> "number"
-* _.typeOf("javascript") -> "string"
-* _.typeOf([1,2,3]) -> "array"
+*   _.first("ponies", 1) -> []
+*   _.first(["a", "b", "c"], "ponies") -> "a"
+*   _.first(["a", "b", "c"], 1) -> "a"
+*   _.first(["a", "b", "c"], 2) -> ["a", "b"]
 */
 
 _.first = function(array, number){
@@ -90,22 +109,23 @@ _.first = function(array, number){
         return array
     }
 }
-/** _.first
+
+/** _.last
 * Arguments:
 *   1) An array
 *   2) A number
 * Objectives:
 *   1) If <array> is not an array, return []
-*   2) If <number> is not given or not a number, return just the first element in <array>.
-*   3) Otherwise, return the first <number> items of <array>
+*   2) If <number> is not given or not a number, return just the last element in <array>.
+*   3) Otherwise, return the last <number> items of <array>
 * Edge Cases:
 *   1) What if <number> is negative?
 *   2) What if <number> is greater than <array>.length?
 * Examples:
-*   _.first("ponies", 1) -> []
-*   _.first(["a", "b", "c"], "ponies") -> "a"
-*   _.first(["a", "b", "c"], 1) -> "a"
-*   _.first(["a", "b", "c"], 2) -> ["a", "b"]
+*   _.last("ponies", 2) -> []
+*   _.last(["a", "b", "c"], "ponies") -> "c"
+*   _.last(["a", "b", "c"], 1) -> "c"
+*   _.last(["a", "b", "c"], 2) -> ["b", "c"]
 */
 
 _.last = function(array, number){
@@ -126,25 +146,6 @@ _.last = function(array, number){
         return array
     }
 }
-/** _.last
-* Arguments:
-*   1) An array
-*   2) A number
-* Objectives:
-*   1) If <array> is not an array, return []
-*   2) If <number> is not given or not a number, return just the last element in <array>.
-*   3) Otherwise, return the last <number> items of <array>
-* Edge Cases:
-*   1) What if <number> is negative?
-*   2) What if <number> is greater than <array>.length?
-* Examples:
-*   _.last("ponies", 2) -> []
-*   _.last(["a", "b", "c"], "ponies") -> "c"
-*   _.last(["a", "b", "c"], 1) -> "c"
-*   _.last(["a", "b", "c"], 2) -> ["b", "c"]
-*/
-
-
 
 /** _.indexOf
 * Arguments:
@@ -162,6 +163,9 @@ _.last = function(array, number){
 *   _.indexOf(["a","b","c"], "d") -> -1
 */
 
+_.indexOf = function(array, value){
+return index
+}
 
 /** _.contains
 * Arguments:
@@ -177,6 +181,12 @@ _.last = function(array, number){
 * Examples:
 *   _.contains([1,"two", 3.14], "two") -> true
 */
+
+_.contains = function(array, value){
+
+return true || false
+
+}
 
 
 /** _.each
@@ -223,6 +233,10 @@ if (Array.isArray(collection)){
 *   _.unique([1,2,2,4,5,6,5,2]) -> [1,2,4,5,6]
 */
 
+_.unique = function(array){
+
+    return array
+}
 
 /** _.filter
 * Arguments:
@@ -240,7 +254,10 @@ if (Array.isArray(collection)){
 *   use _.each in your implementation
 */
 
+_.filter = function(array, func){
+return array
 
+}
 /** _.reject
 * Arguments:
 *   1) An array
@@ -254,6 +271,10 @@ if (Array.isArray(collection)){
 *   _.reject([1,2,3,4,5], function(e){return e%2 === 0}) -> [1,3,5]
 */
 
+_.reject = function(array, func){
+
+    return array
+}
 
 /** _.partition
 * Arguments:
@@ -274,6 +295,9 @@ if (Array.isArray(collection)){
 }
 */
 
+_.partition = function(array, func){
+    return array
+}
 
 /** _.map
 * Arguments:
@@ -290,7 +314,9 @@ if (Array.isArray(collection)){
 * Examples:
 *   _.map([1,2,3,4], function(e){return e * 2}) -> [2,4,6,8]
 */
-
+_.map = function(collection, func){
+    return collection
+}
 
 /** _.pluck
 * Arguments:
@@ -301,6 +327,31 @@ if (Array.isArray(collection)){
 *   2) You must use _.map() in your implementation.
 * Examples:
 *   _.pluck([{a: "one"}, {a: "two"}], "a") -> ["one", "two"]
+*/
+_.pluck = function(array, property){
+
+    return array
+}
+
+/** _.every
+* Arguments:
+*   1) A collection
+*   2) A function
+* Objectives:
+*   1) Call <function> for every element of <collection> with the paramaters:
+*      if <collection> is an array:
+*          current element, it's index, <collection>
+*      if <collection> is an object:
+*          current value, current key, <collection>
+*   2) If the return value of calling <function> for every element is true, return true
+*   3) If even one of them returns false, return false
+*   4) If <function> is not provided, return true if every element is truthy, otherwise return false
+* Edge Cases:
+*   1) what if <function> doesn't return a boolean
+*   2) What if <function> is not given?
+* Examples:
+*   _.every([2,4,6], function(e){return e % 2 === 0}) -> true
+*   _.every([1,2,3], function(e){return e % 2 === 0}) -> false
 */
 
 _.every = function(collection, func){
@@ -341,28 +392,6 @@ _.every = function(collection, func){
     }
     return true
 }
-/** _.every
-* Arguments:
-*   1) A collection
-*   2) A function
-* Objectives:
-*   1) Call <function> for every element of <collection> with the paramaters:
-*      if <collection> is an array:
-*          current element, it's index, <collection>
-*      if <collection> is an object:
-*          current value, current key, <collection>
-*   2) If the return value of calling <function> for every element is true, return true
-*   3) If even one of them returns false, return false
-*   4) If <function> is not provided, return true if every element is truthy, otherwise return false
-* Edge Cases:
-*   1) what if <function> doesn't return a boolean
-*   2) What if <function> is not given?
-* Examples:
-*   _.every([2,4,6], function(e){return e % 2 === 0}) -> true
-*   _.every([1,2,3], function(e){return e % 2 === 0}) -> false
-*/
-
-
 /** _.some
 * Arguments:
 *   1) A collection
@@ -473,6 +502,11 @@ return result;
 *   _.extend(data, {b:"two"}); -> data now equals {a:"one",b:"two"}
 *   _.extend(data, {a:"two"}); -> data now equals {a:"two"}
 */
+
+_.extend = function(object1, object2){
+    return object1
+}
+
 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
