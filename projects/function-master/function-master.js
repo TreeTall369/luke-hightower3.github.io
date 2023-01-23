@@ -239,20 +239,14 @@ return object
 
 function dedup(array) {
 
-// array of characters, remove duplicates
-// if the index = the index prior then dont push that
-// if the index is != or 'new' then push into array
-// return array
-// let lab = []
-// for (let index = 0; index < array.length; index++){
-//     if (index = 0){
-//     lab.push(array[0])
-//     } else if (index > 0 && index !== index - 1){
-//     lab.push(array[index])
-//     } 
-// } 
+let test = array.reduce(function(acc, cur){
+if(!acc.includes(cur)){
+    acc.push(cur)
+}
+return acc
+}, [])
 
-
+return test
 
 
 // return lab
