@@ -276,6 +276,7 @@ _.unique = function(array){
 */
 
 _.filter = function(array, func){
+    
 return array
 
 }
