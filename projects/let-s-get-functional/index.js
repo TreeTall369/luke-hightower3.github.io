@@ -23,30 +23,27 @@ var _ = require('underbar');
 
 var maleCount = function(array) {
     let males = _.filter(array, function(customer){
-        return customer.gender = 'males'
+        return customer.gender === 'male'
     })
-
+   
     return males.length
-}; // filter 
+}; 
 
 var femaleCount = function(array){
 
-    let females = _.reduce(function(acc, cur){
-        if (cur.gender === 'female'){
-            acc++
-        }
-        return acc
-    }, 0)
-    return females
+    let females = _.filter(array, function(customer){
+       return customer.gender === 'female'
+    })
+    return females.length
 
-}; //reduce
+}; 
  
 var oldestCustomer = function(array){
 
-    let oldestCustomer = _.reduce(function(acc, cur){
-      return acc.age >= cur.age ? acc.name : cur.name;
+    let oldest = _.reduce(function(acc, cur){
+      return acc.age >= cur.age ? cur.name : acc.name;
     })
-    return oldestCustomer;
+    return oldest;
 }; // reduce -- no seed value
 
 var youngestCustomer = function(array){
