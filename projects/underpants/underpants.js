@@ -276,8 +276,16 @@ _.unique = function(array){
 */
 
 _.filter = function(array, func){
-    
-return array
+    let trueArray = [];
+
+    for (let index = 0; index < array.length; index++){
+        if (func(array[index], index, array) === true){
+            trueArray.push(array[index])
+        }
+    }
+
+
+return trueArray
 
 }
 /** _.reject
@@ -295,7 +303,16 @@ return array
 
 _.reject = function(array, func){
 
-    return array
+    let trueArray = [];
+
+    for (let index = 0; index < array.length; index++){
+        if (func(array[index], index, array) !== true){
+            trueArray.push(array[index])
+        }
+    }
+
+
+return trueArray
 }
 
 /** _.partition
@@ -318,9 +335,18 @@ _.reject = function(array, func){
 */
 
 _.partition = function(array, func){
-    return array
-}
+  
+    let falsey = []
+    let truthy = []
 
+    for (let index = 0; index < array.length; index++){
+        func(array[index], index, array) ? truthy.push(array[index]) : falsey.push(array[index])
+    }
+
+    let box = []
+    box.push(truthy, falsey)
+    return box
+}
 /** _.map
 * Arguments:
 *   1) A collection
@@ -337,7 +363,16 @@ _.partition = function(array, func){
 *   _.map([1,2,3,4], function(e){return e * 2}) -> [2,4,6,8]
 */
 _.map = function(collection, func){
-    return collection
+   
+    let mapped = []
+    if (Array.isArray(collection)){
+        // call func for all elements
+    } else {
+        // call func for all key/values
+    }
+
+    return mapped
+
 }
 
 /** _.pluck
