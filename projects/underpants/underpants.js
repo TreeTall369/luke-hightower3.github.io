@@ -365,10 +365,15 @@ _.partition = function(array, func){
 _.map = function(collection, func){
    
     let mapped = []
-    if (Array.isArray(collection)){
-        // call func for all elements
+
+    if (Array.isArray(collection) === true){
+      for (let index = 0; index < collection.length; index++){
+        mapped.push(func(collection[index], index, collection))
+      }
     } else {
-        // call func for all key/values
+        for (let key in collection){
+            mapped.push(func(collection[key], key, collection))
+        }
     }
 
     return mapped
@@ -386,8 +391,10 @@ _.map = function(collection, func){
 *   _.pluck([{a: "one"}, {a: "two"}], "a") -> ["one", "two"]
 */
 _.pluck = function(array, property){
-
-    return array
+     let test = _.map(array, function(element){
+        return element[property]
+     })
+    return test 
 }
 
 /** _.every
@@ -560,8 +567,12 @@ return result;
 *   _.extend(data, {a:"two"}); -> data now equals {a:"two"}
 */
 
-_.extend = function(object1, object2){
-    return object1
+_.extend = function(object1, object2, object3){
+    if (object3 === undefined){
+    return Object.assign(object1, object2)
+    } else if (object3){
+        return Object.assign(object1, object2, object3)
+    }
 }
 
 
