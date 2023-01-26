@@ -116,12 +116,39 @@ var friendsCount = function (array, title) {
 var topThreeTags = function (array) {
   
     let bank = []
-    for (let index = 0; index < array.length; index++){
+    for (let index = 0; index < array.length; index++) {
       bank.push(array[index].tags)
     }
     let allTags = bank.flat()
     let sort = allTags.sort()
-  
+    console.log(sort)
+    let wordBank = []
+    for (let index = 0; index < sort.length; index++) {
+      if (!wordBank.includes(sort[index])) {
+        wordBank.push(sort[index])
+      }
+    }
+    let object = {}
+    for (let index = 0; index < wordBank.length; index++) {
+      object[wordBank[index]] = 0
+    }
+    console.log(wordBank)
+    for (let key in object){
+      for (let index = 0; index < sort.length; index++){
+        if (key === sort[index]){
+          object[key] += 1
+        }
+      }
+    }
+    let top = []
+    for (let key in object){
+      if (object[key] >= 3){
+        top.push(key)
+      }
+    }
+    console.log(object)
+    console.log(top)
+  return top
 };
 
 var genderCount = function (array) {
