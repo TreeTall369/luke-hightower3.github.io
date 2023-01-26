@@ -80,8 +80,28 @@ function nth() {
 // deepEqual ///////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function deepEqual() {
+function deepEqual(x, y) {
+if (typeof x !== 'object' && typeof y !== 'object'){
+  return x === y;
+}
 
+if (typeof x !== 'object' || typeof y !== 'object'){
+  return false;
+}
+
+  let xKeys = Object.keys(x);
+  let yKeys = Object.keys(y);
+
+  if (xKeys.length !== yKeys.length){
+    return false;
+  }
+
+  for (let index = 0; index < xKeys.length; index++){
+    if (!yKeys.includes(xKeys[index]) || !deepEqual(x[xKeys[index]], y[xKeys[index]])){
+      return false
+    }
+  }
+  return true
 }
 
 ////////////////////////////////////////////////////////////////////////////////
