@@ -113,7 +113,15 @@ var friendsCount = function (array, title) {
     return list
 };
 
-var topThreeTags = function () {
+var topThreeTags = function (array) {
+  
+    let bank = []
+    for (let index = 0; index < array.length; index++){
+      bank.push(array[index].tags)
+    }
+    let allTags = bank.flat()
+    let sort = allTags.sort()
+  
 };
 
 var genderCount = function (array) {
