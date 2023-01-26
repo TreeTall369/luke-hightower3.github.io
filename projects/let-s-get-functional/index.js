@@ -40,43 +40,44 @@ var femaleCount = function(array){
  
 var oldestCustomer = function(array){
 
-    let oldest = _.reduce(function(acc, cur){
-      return acc.age >= cur.age ? cur.name : acc.name;
+    let oldest = array.reduce(function(acc, cur){
+      return acc.age >= cur.age ? acc : cur;
     })
-    return oldest;
+    return oldest.name;
 }; // reduce -- no seed value
 
 var youngestCustomer = function(array){
 
-    let youngestCustomer = _.reduce(function(acc, cur){
-        return acc.age <= cur.age ? acc.name : cur.name;
+    let youngestCustomer = array.reduce(function(acc, cur){
+        return acc.age <= cur.age ? acc : cur;
     })
-    return youngestCustomer
+    return youngestCustomer.name
 }; // reduce -- no seed value
 
-var averageBalance = function (array) {
-    let holder = [];
-    for (index = 0; index < array.length; index++) {
-        holder.push(array[index].balance.split(''))
+var averageBalance = function (test) {
+    let bank = []
+    for (let index = 0; index < test.length; index++){
+      bank.push(test[index].balance.split(''))
     }
-    let newHolder = [];
-    for (let i = 0; i < holder.length; i++) {
-        for (let j = 0; j < holder[i].length; j++) {
-            if (holder[i][j] !== '$' && holder[i][j] !== ',') {
-                newHolder.push(holder[i][j])
-            }
+   // console.log(bank)
+    let nextBank = []
+    for (let index = 0; index < bank.length; index++){
+      for (let j = 0; j < bank[index].length; j++){
+        if (!bank[index][j].includes('$') && !bank[index][j].includes(',')){
+          nextBank.push(bank[index][j])
         }
-        newHolder.push(' ')
+      }
+      nextBank.push(' ')
     }
-    let h = newHolder.join('')
-    let s = h.split(' ')
-    let sum = _.reduce(array, function (acc, cur) {
-
-        // MAYBE problem is here ... Need to make yet another loop to ensure they are numbers in an array then reduce?
-        return Number(acc) + Number(cur)
-    }, 0)
-    let members = array.length
-    let avg = sum.toFixed() / members
+    let challenge = nextBank.join('');
+    let choice = challenge.split(' ')
+    //console.log(choice)
+    let map = choice.map(element => Number(element))
+    //console.log(map)
+    let total = map.reduce((acc, cur) => {return acc + cur})
+   // console.log(total.toFixed())
+    let avg = total.toFixed() / test.length
+    //console.log(avg)
     return avg
 }
 
