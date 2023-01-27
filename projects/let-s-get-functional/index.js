@@ -21,168 +21,169 @@ var _ = require('underbar');
  *    IMPORTANT: Make sure you replace <YOUR_GITHUB_FOLDER with your actual github folder name that is in your workspace.
  */
 
-var maleCount = function(array) {
-    let males = _.filter(array, function(customer){
-        return customer.gender === 'male'
-    })
-   
-    return males.length
-}; 
+var maleCount = function (array) {
+  let males = _.filter(array, function (customer) {
+    return customer.gender === 'male'
+  })
 
-var femaleCount = function(array){
+  return males.length
+};
 
-    let females = _.filter(array, function(customer){
-       return customer.gender === 'female'
-    })
-    return females.length
+var femaleCount = function (array) {
 
-}; 
- 
-var oldestCustomer = function(array){
+  let females = _.filter(array, function (customer) {
+    return customer.gender === 'female'
+  })
+  return females.length
 
-    let oldest = array.reduce(function(acc, cur){
-      return acc.age >= cur.age ? acc : cur;
-    })
-    return oldest.name;
+};
+
+var oldestCustomer = function (array) {
+
+  let oldest = array.reduce(function (acc, cur) {
+    return acc.age >= cur.age ? acc : cur;
+  })
+  return oldest.name;
 }; // reduce -- no seed value
 
-var youngestCustomer = function(array){
+var youngestCustomer = function (array) {
 
-    let youngestCustomer = array.reduce(function(acc, cur){
-        return acc.age <= cur.age ? acc : cur;
-    })
-    return youngestCustomer.name
+  let youngestCustomer = array.reduce(function (acc, cur) {
+    return acc.age <= cur.age ? acc : cur;
+  })
+  return youngestCustomer.name
 }; // reduce -- no seed value
 
 var averageBalance = function (test) {
-    let bank = []
-    for (let index = 0; index < test.length; index++){
-      bank.push(test[index].balance.split(''))
-    }
-   // console.log(bank)
-    let nextBank = []
-    for (let index = 0; index < bank.length; index++){
-      for (let j = 0; j < bank[index].length; j++){
-        if (!bank[index][j].includes('$') && !bank[index][j].includes(',')){
-          nextBank.push(bank[index][j])
-        }
+  let bank = []
+  for (let index = 0; index < test.length; index++) {
+    bank.push(test[index].balance.split(''))
+  }
+  // console.log(bank)
+  let nextBank = []
+  for (let index = 0; index < bank.length; index++) {
+    for (let j = 0; j < bank[index].length; j++) {
+      if (!bank[index][j].includes('$') && !bank[index][j].includes(',')) {
+        nextBank.push(bank[index][j])
       }
-      nextBank.push(' ')
     }
-    let challenge = nextBank.join('');
-    let choice = challenge.split(' ')
-    //console.log(choice)
-    let map = choice.map(element => Number(element))
-    //console.log(map)
-    let total = map.reduce((acc, cur) => {return acc + cur})
-   // console.log(total.toFixed())
-    let avg = total.toFixed() / test.length
-    //console.log(avg)
-    return avg
+    nextBank.push(' ')
+  }
+  let challenge = nextBank.join('');
+  let choice = challenge.split(' ')
+  //console.log(choice)
+  let map = choice.map(element => Number(element))
+  //console.log(map)
+  let total = map.reduce((acc, cur) => { return acc + cur })
+  // console.log(total.toFixed())
+  let avg = total.toFixed() / test.length
+  //console.log(avg)
+  return avg
 }
 
 var firstLetterCount = function (array, letter) {
-    let count = 0
-    for (let index = 0; index < array.length; index++) {
-        if (array[index].name[0].toLowerCase() === letter.toLowerCase()) {
-            count++
-        }
+  let count = 0
+  for (let index = 0; index < array.length; index++) {
+    if (array[index].name[0].toLowerCase() === letter.toLowerCase()) {
+      count++
     }
-    return count
+  }
+  return count
 };
 
 var friendFirstLetterCount = function (array, customer, letter) {
-    let count = 0
-    for (let index = 0; index < array.length; index++) {
-        for (let j = 0; j < array[index].friends.length; j++)
-            if (array[index].name === customer && array[index].friends[j].name[0].toLowerCase() === letter.toLowerCase()) {
-                count++
-            }
-    }
-    return count
+  let count = 0
+  for (let index = 0; index < array.length; index++) {
+    for (let j = 0; j < array[index].friends.length; j++)
+      if (array[index].name === customer && array[index].friends[j].name[0].toLowerCase() === letter.toLowerCase()) {
+        count++
+      }
+  }
+  return count
 };
 
 var friendsCount = function (array, title) {
-    let list = []
-    for (let index = 0; index < array.length; index++) {
-        for (let j = 0; j < array[index].friends.length; j++)
-            if (array[index].friends[j].name === title) {
-                list.push(array[index].name)
-            }
-    }
-    return list
+  let list = []
+  for (let index = 0; index < array.length; index++) {
+    for (let j = 0; j < array[index].friends.length; j++)
+      if (array[index].friends[j].name === title) {
+        list.push(array[index].name)
+      }
+  }
+  return list
 };
 
 var topThreeTags = function (array) {
-  
-    let bank = []
-    for (let index = 0; index < array.length; index++) {
-      bank.push(array[index].tags)
+
+  let bank = []
+  for (let index = 0; index < array.length; index++) {
+    bank.push(array[index].tags)
+  }
+  let allTags = bank.flat()
+  let sort = allTags.sort()
+  console.log(sort)
+  let wordBank = []
+  for (let index = 0; index < sort.length; index++) {
+    if (!wordBank.includes(sort[index])) {
+      wordBank.push(sort[index])
     }
-    let allTags = bank.flat()
-    let sort = allTags.sort()
-    console.log(sort)
-    let wordBank = []
+  }
+  let object = {}
+  for (let index = 0; index < wordBank.length; index++) {
+    object[wordBank[index]] = 0
+  }
+  console.log(wordBank)
+  for (let key in object) {
     for (let index = 0; index < sort.length; index++) {
-      if (!wordBank.includes(sort[index])) {
-        wordBank.push(sort[index])
+      if (key === sort[index]) {
+        object[key] += 1
       }
     }
-    let object = {}
-    for (let index = 0; index < wordBank.length; index++) {
-      object[wordBank[index]] = 0
+  }
+  let top = []
+  for (let key in object) {
+    // still need to create array of subarrays with key/values 
+    if (object[key] >= 3) {
+      top.push(key)
     }
-    console.log(wordBank)
-    for (let key in object){
-      for (let index = 0; index < sort.length; index++){
-        if (key === sort[index]){
-          object[key] += 1
-        }
-      }
-    }
-    let top = []
-    for (let key in object){
-      if (object[key] >= 3){
-        top.push(key)
-      }
-    }
-    console.log(object)
-    console.log(top)
+  }
+  console.log(object)
+  console.log(top)
   return top
 };
 
 var genderCount = function (array) {
-    let mCount = [];
-    let fCount = [];
-    let nCount = [];
-    if (array[0].gender === 'male') {
-        mCount.push('male')
-    } else if (array[0].gender === 'female') {
-        fCount.push('female')
-    } else if (array[0].gender === 'non-binary') {
-        nCount.push('non-binary')
-    }
+  let mCount = [];
+  let fCount = [];
+  let nCount = [];
+  if (array[0].gender === 'male') {
+    mCount.push('male')
+  } else if (array[0].gender === 'female') {
+    fCount.push('female')
+  } else if (array[0].gender === 'non-binary') {
+    nCount.push('non-binary')
+  }
 
-    _.reduce(array, function (acc, cur) {
-        if (cur.gender === 'male') {
-            mCount.push(cur.gender)
-        }
-    })
-    _.reduce(array, function (acc, cur) {
-        if (cur.gender === 'female') {
-            fCount.push(cur.gender)
-        }
-    })
-    _.reduce(array, function (acc, cur) {
-        if (cur.gender === 'non-binary') {
-            nCount.push(cur.gender)
-        }
-    })
-    let genObject = {}
-    genObject.male = mCount.length;
-    genObject.female = fCount.length;
-    genObject['non-binary'] = nCount.length;
-    return genObject
+  _.reduce(array, function (acc, cur) {
+    if (cur.gender === 'male') {
+      mCount.push(cur.gender)
+    }
+  })
+  _.reduce(array, function (acc, cur) {
+    if (cur.gender === 'female') {
+      fCount.push(cur.gender)
+    }
+  })
+  _.reduce(array, function (acc, cur) {
+    if (cur.gender === 'non-binary') {
+      nCount.push(cur.gender)
+    }
+  })
+  let genObject = {}
+  genObject.male = mCount.length;
+  genObject.female = fCount.length;
+  genObject['non-binary'] = nCount.length;
+  return genObject
 }
 
 //////////////////////////////////////////////////////////////////////
