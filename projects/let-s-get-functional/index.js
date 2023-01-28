@@ -113,7 +113,7 @@ var friendsCount = function (array, title) {
   return list
 };
 
-var topThreeTags = function (array) {
+var topThreeTags = function(array) {
 
   let bank = []
   for (let index = 0; index < array.length; index++) {
@@ -121,7 +121,7 @@ var topThreeTags = function (array) {
   }
   let allTags = bank.flat()
   let sort = allTags.sort()
-  console.log(sort)
+  //console.log(sort)
   let wordBank = []
   for (let index = 0; index < sort.length; index++) {
     if (!wordBank.includes(sort[index])) {
@@ -132,7 +132,8 @@ var topThreeTags = function (array) {
   for (let index = 0; index < wordBank.length; index++) {
     object[wordBank[index]] = 0
   }
-  console.log(wordBank)
+  //console.log(wordBank)
+
   for (let key in object) {
     for (let index = 0; index < sort.length; index++) {
       if (key === sort[index]) {
@@ -140,16 +141,32 @@ var topThreeTags = function (array) {
       }
     }
   }
-  let top = []
-  for (let key in object) {
-    // still need to create array of subarrays with key/values 
-    if (object[key] >= 3) {
-      top.push(key)
-    }
-  }
-  console.log(object)
-  console.log(top)
-  return top
+  //console.log(object)
+  // let top = []
+  // for (let key in object) {
+  //   // still need to create array of subarrays with key/values 
+  //   if (object[key] >= 3) {
+  //     top.push(key)
+  //   }
+  // }
+  //console.log(top)
+
+  let bunk = []
+for (let key in object){
+  let open = []
+  open.push(object[key], key)
+  bunk.push(open) 
+}
+//console.log(bunk)
+//console.log(bunk.sort())
+let bunkTwo = bunk.sort()
+console.log(bunkTwo)
+let answer = []
+  answer.push(bunkTwo[bunkTwo.length - 1][1], bunkTwo[bunkTwo.length - 2][1], bunkTwo[bunkTwo.length - 3][1])
+
+//console.log(answer)
+  
+  return answer
 };
 
 var genderCount = function (array) {
