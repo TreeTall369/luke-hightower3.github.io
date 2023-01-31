@@ -14,8 +14,11 @@
  * 
  *   0.     This is an introduction to Variables. The following will explain, through written 
  *          and coded examples the essence of variables in JavaScript. 
- * 
- *   1.     Variables are the building blockes of object oriented programming. Variables hold, or 
+ */
+
+    let example = 'put examples here'
+
+/**  1.     Variables are the building blockes of object oriented programming. Variables hold, or 
  *          point data. It is with variables that we are able to relate these pieces of data (value or
  *          reference) to one another. Variable build into functions. 
  *
