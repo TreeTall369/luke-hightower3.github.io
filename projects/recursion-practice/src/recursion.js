@@ -223,7 +223,7 @@ var gcd = function(x, y) {
 // compareStr('house', 'houses') // false
 // compareStr('', '') // true
 // compareStr('tomato', 'tomato') // true
-var compareStr = function (str1, str2, bool = false) {
+var compareStr = function (str1, str2, bool=false) {
   // base
   if (str1.length === 1 && str2.length === 1 && str1[0] !== str2[0]) {
       return bool;
@@ -241,7 +241,9 @@ var compareStr = function (str1, str2, bool = false) {
       bool = true
       return bool
   }
+
   return compareStr(str1.slice(1), str2.slice(1), bool);
+
 };
 
 // 16. Write a function that accepts a string and creates an array where each letter
@@ -427,19 +429,14 @@ var flatten = function(arrays) {
 
 // 30. Given a string, return an object containing tallies of each letter.
 // letterTally('potato'); // {'p':1, 'o':2, 't':2, 'a':1}
-var letterTally = function (str, obj = {}) {
-  // base
-  if (str.length === 0) {
-      return obj
-  } else if (str[0] !== obj[str[0]]) {
-      obj[str[0]] = 1
-  } else if (obj.hasOwnProperty(str[0])) {
-      obj[str[0]] = obj[str[0]]++;
-  }
-
-  // recursive
-  return letterTally(str.slice(1), obj)
-};
+var letterTally = function(str, obj = {}) {
+    if (!str.length) return obj;
+    
+    let letter = str[0];
+    obj[letter] = obj[letter] ? obj[letter] + 1 : 1;
+    
+    return letterTally(str.slice(1), obj);
+    }
 
 // 31. Eliminate consecutive duplicates in a list.  If the list contains repeated
 // elements they should be replaced with a single copy of the element. The order of the
