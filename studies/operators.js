@@ -15,8 +15,14 @@
  * 
  *              examples 
  *              console.log    
- *             
- *      1.  Arithmetic Operators:
+ */
+
+
+
+
+
+
+ /*      1.  Arithmetic Operators:
  * 
  *          As is evident in their name the arithmetic operators are for mathmatical purposes. Most are familiar +, -, /, * 
  *          However some ar orignal to JavaScript. Like modulus opertaor % which when placed between to number will return
@@ -29,8 +35,12 @@
  *              increment, decrement
  *              examples
  *              console
- * 
- *      2.  Comparison Operators:
+ */
+
+ 
+
+
+ /*      2.  Comparison Operators:
  * 
  *          Comparisons are made in JavaScript like the words: 'is equal' and 'greater' and 'lesser than' are used
  *          in conversation. Though this with much greater specificity. Operators == and ===. Signfy values being the same.
@@ -43,8 +53,14 @@
  * 
  *              examples
  *              console
- *      
- *      3.  Logical Operators:
+ */
+
+ 
+
+
+
+
+ /*      3.  Logical Operators:
  * 
  *          Logical Operators, this operators work within conditional statements ie if, else if, else... statements.
  *          These operators include the && double ampersand to mean A &&(and) B are yada yada yada. Both this to be true
@@ -57,8 +73,13 @@
  * 
  *              example
  *              console
- *         
- *      4.  Unary Operators:
+ */
+
+ 
+
+
+
+ /*      4.  Unary Operators:
  * 
  *          Unary Operators are refering to single variable operations. Simply the operand and one variable. Examples 
  *          of these include +varExample and -varExample, which will turn the value into a number or its negative, or typeof varExample, which will 
@@ -66,8 +87,13 @@
  * 
  *              example
  *              console
- *  
- *      5.  Ternary Operator:
+ */ 
+
+
+
+
+
+ /*      5.  Ternary Operator:
  * 
  *          The Ternary Operator is also under the umbrella of comparison operators. This is best explained by reading
  *          out the syntax, A ? B : C. Out loud so-to-speak, this is If A is true do B, if false do C. Using the ternary

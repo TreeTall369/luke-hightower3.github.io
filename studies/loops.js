@@ -22,15 +22,24 @@
  *                          for (var index = 0; index < -------.length; index++){
  *                                     perform action upon each index               
  *                                  }
- * 
- *      1.  The example above is a for loop we would use to iterate over something. What is that something?
+ */
+
+
+
+
+ /*      1.  The example above is a for loop we would use to iterate over something. What is that something?
  *          Why is the 'thing we loop over' in the end point? Both start point and end point need a number to run. 
  *          The difference therein results in how many times it will loop (iterate). By this we can loop over an 
  *          Array from 0 to end by using the .length property. To reverse the direction the .length property will be
  *          most effective at the starting point since the 'end' of the array is where the iteration will need to
  *          start. 
- * 
- *      2.  As we can see however Loops don't need to pair linked with a collection. If we wish to print numbers
+ */
+
+ 
+
+
+
+ /*      2.  As we can see however Loops don't need to pair linked with a collection. If we wish to print numbers
  *          for example or perform the same action several times we can use loops. The for loop would simply have a 
  *          given number as the start and end point to perform this. We can however use another loop called the
  *          while loop. While loops can do essentially the things as a for loop. However there are exceptions and
@@ -45,8 +54,14 @@
  *               array.push('open') 
  *               console.log('Enjoy The Show!')  
  *               count++ }
- * 
- *      3.  Above we have a while loop that compares two value with the lesser operator. 'While' count is
+ */
+
+ 
+
+
+
+
+ /*      3.  Above we have a while loop that compares two value with the lesser operator. 'While' count is
  *          less than seats (seats being the number 99) the loop will perfom the code within the curly braces
  *          So in this case we are going to push into a literal array as well as log to the console our special
  *          note. These variables can be adjusted as need too by reassigning the count and seats variable. While 

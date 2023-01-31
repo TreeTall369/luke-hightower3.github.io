@@ -7,15 +7,23 @@
  *          of data are true (e.g. if its a number, big, small, a letter, case, length, etc) and to do this we have 
  *          to be thoughtful or at least flexible about how we arrange the control flow. Certain details need to be 
  *          checked first, is what that means.
- * 
- *     1.   At times the path of the condtions needed to get a function do what it needs to do is unexpected. Thus 
+ */
+
+
+
+
+ /*     1.   At times the path of the condtions needed to get a function do what it needs to do is unexpected. Thus 
  *          it is advisable to experiment with different arrangements for different outcomes. Along with finding 
  *          clever ways to filter data we need to be mindful of using the simplest and least repetitive code
  *          when developing control flows. A simple code sometimes starts out messy so working it down to a
  *          more refined method is key to the best control flow.
  * 
- *  
- *     2.   if, else if and else statements form a trio. To fully utilize these we'll complete all three elements
+ */
+
+ 
+
+
+ /*     2.   if, else if and else statements form a trio. To fully utilize these we'll complete all three elements
  * 
  *          first part:             if(condition){
  *                            perform action   } 
@@ -29,8 +37,14 @@
  *              this chain of code with as many "else if" conditions as needed. This provides the develop a way of 
  *              sending a complex chain of actions with desired outcomes honed in upon. A side note, we do not use 
  *              return within the action 
- * 
- *     3.   Switch statements are a modified version of if, else if, else statements. As mentioned above we can 
+ */
+
+ 
+
+
+
+
+ /*     3.   Switch statements are a modified version of if, else if, else statements. As mentioned above we can 
  *          build the conditional links to be as long as we'd like however depending upon the desire actions
  *          within the curly braces { performance action } there is a simpler way. Switch statements have the
  *          syntax: 

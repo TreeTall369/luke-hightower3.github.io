@@ -19,8 +19,12 @@
  *              var testFx = parameterOne + ' and ' + parameterTwo;
  *                  return  testFx
  *                      }
- * 
- *      1.  This version sets the function name in variable form. The parameters are then indicated within the () and 
+ */
+
+
+
+
+/*      1.  This version sets the function name in variable form. The parameters are then indicated within the () and 
  *          the code block in written within the {}. A function declared like this allows us to see the function assigned
  *          to the variable which aids in following the passage of functions through variable assignments. While written 
  *          like this: exampleFx; the function is an object but not invoked. It remains a statement not expression. This 
@@ -35,8 +39,12 @@
  *                 
  *            var favDishes = exampleFx('pumpkin pie', 'whipped cream');
  *            console.log(favDishes);
- * 
- *      2.  In this example we have a variable assign to a function being expressed. That variable is then being logged
+ */
+
+
+
+
+/*      2.  In this example we have a variable assign to a function being expressed. That variable is then being logged
  *          to the console. So it should say pumpkin pie and whipped cream. This function is using parameters which have
  *          been coded into the function using camelCase. This way is not required (so-to-speak). There could be a
  *          simpler way to find desired results using the arguments object. Arguments is a keyword that references the
