@@ -122,20 +122,10 @@ var exponent = function (base, exp, sum = base) {
 // powerOfTwo(1); // true
 // powerOfTwo(16); // true
 // powerOfTwo(10); // false
-var powerOfTwo = function (n, factor = n) {
-  if (n === 2) {
-      return true
-  } else if (factor === 0) {
-      return false
-  } else if (factor >= 1) {
-      if (factor * factor === n) {
-          return true
-      } else (
-          factor--
-      )
-  }
-
-  return powerOfTwo(n, factor)
+var powerOfTwo = function (num) {
+    if (num === 1) return true;
+    if (num % 2 !== 0 || num === 0) return false;
+    return powerOfTwo(num / 2);
 };
 
 // 9. Write a function that accepts a string a reverses it.
