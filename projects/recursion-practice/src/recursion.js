@@ -224,45 +224,22 @@ var gcd = function(x, y) {
 // compareStr('', '') // true
 // compareStr('tomato', 'tomato') // true
 var compareStr = function (str1, str2, bool=false) {
-  // base
-  if (str1.length === 1 && str2.length === 1 && str1[0] !== str2[0]) {
-      return bool;
-  } else if (str1.length === 1 && str2.length === 1 && str1[0] === str2[0]) {
-      bool = true
-      return bool;
-  } else if (str1.length !== str2.length) {
-      return bool;
-  } else if (str1 === '' && str2 === '') {
-      bool = true
-      return bool;
-  } else if (str1[0] !== str2[0]) {
-      return bool
-  } else if (str1[0] === str2[0]) {
-      bool = true
-      return bool
-  }
-
-  return compareStr(str1.slice(1), str2.slice(1), bool);
-
+ 
+ 
 };
 
 // 16. Write a function that accepts a string and creates an array where each letter
 // occupies an index of the array.
 var createArray = function (str, array = []) {
 
-
-
   if (str.length > 1) {
       array.push(str[0])
-
   } else {
       array.push(str[0])
       return array;
   }
 
-
   return createArray(str.slice(1), array)
-
 
 };
 
