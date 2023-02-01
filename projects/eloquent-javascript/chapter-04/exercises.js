@@ -2,7 +2,36 @@
 // range ///////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function range() {
+function range(a, b, c) {
+
+
+let open = []
+
+  if (a === b || c <= 0){
+    return []
+  } else if (a > b && c === undefined){
+    // counting down from a to b
+    for (let index = a; index >= b; index--){
+      open.push(index)
+    }
+  } else if (a < b && c === undefined){
+    // counting up from a to b
+    for (let index = a; index <= b; index++){
+      open.push(index)
+    }  
+  } else if (a > b && c > 0){
+    // count down from a to b by c-step
+    for (let index = a; index >= b; index-c){
+      open.push(index)
+    }
+  } else if (a < b && c > 0){
+    for (let index = a; index <= b; index+=c){
+      open.push(index)
+    }
+  }
+
+
+return open
 
 }
 
