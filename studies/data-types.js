@@ -155,6 +155,6 @@
  *                                        and trying to create it in a finite way (ie in JS) requires this representation. There are 
  *                                        anomolies that bring about infinity and -infinity that are physically irrational.
  */                                     
-
-
+              let maxNumber = Math.pow(10, 1000);
+                     console.log(maxNumber)                                                 
 
