@@ -9,17 +9,13 @@
  *      0.  Assignment Operators: 
  * 
  *          The = sign is the seminal assignment operator. This differs greatly from == and ===. The = can 
- *          be followed by a plus =+ as such minus =- and =*, =/, **= etc. The function the assignment operator is 
+ *          follow a plus += as such minus -= and *=, =/, **= etc. The function the assignment operator is 
  *          extending the 'point to' effect as mention above. We'll assign variables to expressions throughout our
- *          code to bring about our intention. 
- * 
- *              examples 
- *              console.log    
+ *          code to bring about our intention.        
  */
-
-
-
-
+            let string = ''
+            string += 'abc'
+            console.log(string)
 
 
  /*      1.  Arithmetic Operators:
@@ -29,16 +25,13 @@
  *          the remainer as a whole number. The carrot ^ functions to indicate an exponent. And do remember the = sign 
  *          will not be neccessary to return a value like writing our math problems. There are other mathmatical elements
  *          in JavaScript eg math.Random(), parseFloat() etc.. It's important to notice the extent of math within 
- *          JavaScript and how it is represented differtly than common mathmatics. 
- *              
- *              adding strings, adding strings and numbers
- *              increment, decrement
- *              examples
- *              console
+ *          JavaScript and how it is represented differtly than common mathmatics.    
  */
+            let mathSum = 42 + 365 // simple addtion
+            let wordSum = 'Well then,' + ' come on in!' // this concatenates words
+            let modulus = 42 % 8 // 2 --- 8 goes into 42 5 times, with a remainder of 2
 
- 
-
+            console.log(mathSum, wordSum, modulus)
 
  /*      2.  Comparison Operators:
  * 
@@ -50,15 +43,12 @@
  *          values. True is greater than False. An letter have numerical representation used to alphabetize them with 
  *          special method. Essentially the < > Operators have several other uses beyond numbers. Lastly the bang operator
  *          is another key tool. !== and != both mean the opposite of ther predecessor. Not equal, stricly, loosely. 
- * 
- *              examples
- *              console
  */
 
- 
-
-
-
+            console.log('1' === 1) // false
+            console.log('1' == 1); // true
+            console.log(1 >= 10, 1 <= 10) // false, true
+            console.log(10 !== 11, 10 === 11) // true, false
 
  /*      3.  Logical Operators:
  * 
@@ -71,12 +61,15 @@
  *          An example of this is if (!varExample){ varExample++ }. The condition is the variables negation which could
  *          be the product of another function or expression. 
  * 
- *              example
- *              console
  */
 
- 
+            if (42 > 25 && 'abc' !== 'efg'){
+                console.log('the first AND second test pass')
+            }
 
+            if (42 > 25 || 'xyz' !== '789'){
+                console.log('one of these test is passing')
+            }
 
 
  /*      4.  Unary Operators:
@@ -84,13 +77,26 @@
  *          Unary Operators are refering to single variable operations. Simply the operand and one variable. Examples 
  *          of these include +varExample and -varExample, which will turn the value into a number or its negative, or typeof varExample, which will 
  *          return a string of the type of value (with some exceptions). Others are instanceof and !
- * 
- *              example
- *              console
  */ 
+            
+            let x = 'string'
+            console.log(typeof x) // 'string'
 
+            function Car(make, model, year) {
+                this.make = make;
+                this.model = model;
+                this.year = year;
+              }
+            let whip = new Car('vw', 'jetta', 2017)
+            console.log( whip instanceof Car) // true 
 
-
+            let y = 100;
+            // let y;
+            if (!y){
+                console.log('where is y')
+            } else {
+                console.log('y is right there')
+            }
 
 
  /*      5.  Ternary Operator:
@@ -100,8 +106,8 @@
  *          will having a condtion A (eg. age >= 21) followed by to outcomes B ('may enter the bar') and : C ('not allowed inside')
  *          If the age being equal or above 21 is true the value of the expression will be whatever is first, if false then what 
  *          then the second outcome will be the value. 
- * 
- *              example
- *              console
- * 
  */
+
+ let info = ['first,', 'second', 'third', 'fourth'];
+
+ info.length >= 1 ? console.log('we have info') : console.log('we do not have info')
