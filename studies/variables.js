@@ -66,8 +66,7 @@ console.log(exOne, exTwo, exThree) // tests logged to console
   */ 
                 let firstNamesWithMoreThanTenCharactersAndPeopleWhoLiveInLouisianaButAreFromTheWestCoast = {}
                 for (let i = 0; i < array.length; i++){}
-                const sumOfArrayOfUsers = function(){}
-         
+                const sumOfArrayOfUsers = function(){}      
   /*         
   *         In these examples we see names of variables chosen for different reasons. The first is to exemplify that, if needed,
   *         can be very detailed with our names and using Uppercase on all the first letters. The next shows that we use a very 
@@ -79,8 +78,6 @@ console.log(exOne, exTwo, exThree) // tests logged to console
  */
 
  
-
-
  /**    3.  Hoisting is an integral part of what javascript does. Every piece of data put on to the global object is rearranged
   *         as it is passing into JS. This rearrangment is called hoisting. Hoisting will bring varibles declared with var and 
   *         functions up to the top. These will be read first. The value of the variable decalred with var will not be included
@@ -90,18 +87,30 @@ console.log(exOne, exTwo, exThree) // tests logged to console
  *          Without a grasp of the direction hoisting is going to take your code it will be very difficult to understand why
  *          seemingly logical syntax isnt working. These attributes of JS also promote neat code to preserve the proper 
  *          arrangement when compiling.  
- * 
- * 
- * 
  */
+            var hoistingExample;
 
+            function abc(string){
+                hoistingExample = 'letters'
+            }
+            hoistingExample = 'words'
 
- 
- /**
-  * 
-  * 
-  * 
-  *     4.     
- */
+            console.log(hoistingExample);
+            abc();
+            console.log(hoistingExample);     
+
+/**         
+ *          In this example we see our script as JS is going to compile it. The var is declared without
+ *          a value. Then the function. Then the var assignment in the the gloabl window. These examples 
+ *          will log first 'words' then the function is invoked and then 'letters'. We can rearrange these and
+ *          the same will come of it because this is how they are hoisted. 
+ *          
+ *          If we change var to let our hoistedExample would not be hoisted. If we arent careful it will throw
+ *          an error ReferenceError: Cannot access 'hoistingExample' before initialization at Object.<anonymous> 
+ *          (/home/runner/FixedHeavenlySysadmin/index.js:9:18)at Module._compile (node:internal/modules/cjs/loader:1159:14)
+ *          
+ *          Kery takeaways: Var will be hoisted first, then function, let is not hoisted to the top.
+ *  */   
+
 
 
