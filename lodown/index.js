@@ -1,4 +1,4 @@
-'use strict';
+n'use strict';
 
 // YOU KNOW WHAT TO DO //
 
