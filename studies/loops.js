@@ -8,7 +8,7 @@
  *          an ending point, and the patten in which it will move.                          
  */
                 // START POINT        END POINT          PATTERN (update)
-                for (var index = 0; index < -------.length; index++){
+                for (var index = 0; index < array.length; index++){
                         // perform action upon each index      
                     }
 
