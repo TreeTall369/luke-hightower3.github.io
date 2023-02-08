@@ -1,4 +1,4 @@
-n'use strict';
+'use strict';
 
 // YOU KNOW WHAT TO DO //
 
@@ -40,7 +40,7 @@ module.exports.identity = identity;
  * typeOf: this will give us a string stating the type of data
  * 
  *  @param { any:value }: function takes in a datatype, primitive or complex
- *  @return { any:value}: this return a string representing the type of data
+ *  @return { string }: this return a string representing the type of data
  * 
  * 
  */
@@ -74,12 +74,10 @@ function typeOf(value){
 
 module.exports.typeOf = typeOf
 /**
- * first: gives us portion of array from first position
- *  @param { Array, Number }: function takes array and number
- *  @return { Array with desired items}: function returns input value unchanged
- * 
- * 
- * 
+ *  first: gives us portion of array from first position
+ *  @param { Array }: Function takes in an array. 
+ *  @param { Number }: Function take in a number.
+ *  @return { Array }: Function returns array from the beginning to index Number.
  */
 function first(array, number){
     let first = []
@@ -104,11 +102,10 @@ function first(array, number){
 }
 module.exports.first = first
 /**
- * last : gives us portion of array from last position
- * 
- *  @param { any:value }: function takes array and number
- *  @return { any:value}: returns end of array from number index
- *
+ * last : Gives us portion of array from last position.
+ *  @param { Array }: Function takes in an array. 
+ *  @param { Number }: Function take in a number.
+ *  @return { Array }: Function returns array from the end to index Number.
  */
 function last(array, number){
     let last = []
@@ -132,11 +129,9 @@ function last(array, number){
 module.exports.last = last
 /**
  * indexOf: we can find the index of certain values presumed to be in array
- *  @param { any:value }: takes in array and number
- *  @return { any:value}: returns item at number index in array
- * 
- * 
- * 
+ *  @param { Array }: takes in array and number
+ *  @param { Number }
+ *  @return { Array }: returns item at number index in array
  */
 function indexOf(array, value){
 
@@ -149,9 +144,10 @@ function indexOf(array, value){
 }
 module.exports.indexOf = indexOf;
 /**
- * contains: this can find if an array contains a value;
- * @param { any:value }: takes in array and value
- * @return { any:value}: return true if value is in array, false if not
+ * contains: This can detemine if an array contains a value;
+ * @param { Array }: Function takes in an array.
+ * @param { Any:value }: Function takes in a value.
+ * @return { Boolean }: Function returns boolean.
  * 
  * 
  */
@@ -171,11 +167,9 @@ function contains(array, value){
 }
 module.exports.contains = contains
 /**
- * each: this will perform an action on each item in a collection
- * @param { any:value }: takes in collection and a function
- * @return { any:value}: returns collection with function applied to each item
- * 
- * 
+ * each: this will perform an action on each item in a collection. Each does not have a return.
+ * @param { collection }: takes in collection.
+ * @param { Function }: Function takes in a function.
  */
 function each(collection, func){
 

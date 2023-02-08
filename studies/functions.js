@@ -13,12 +13,7 @@
  *      0.  Functions are the most profound aspect of JavaScript. Functions are declared, in this phase they are 
  *          are statement and not an expression. A function is declared to draw together various needed actions
  *          and re-use what is encapsulated in the function. Functions eliminate 're-writing' code over and over. 
- *          They can be declared two ways: 
- * 
- *          var exampleFx = function(parameterOne, parameterTwo){ 
- *              var testFx = parameterOne + ' and ' + parameterTwo;
- *                  return  testFx
- *                      }
+ *          
  */
 
 
@@ -44,13 +39,41 @@
 
 
 
-/*      2.  In this example we have a variable assign to a function being expressed. That variable is then being logged
- *          to the console. So it should say pumpkin pie and whipped cream. This function is using parameters which have
- *          been coded into the function using camelCase. This way is not required (so-to-speak). There could be a
- *          simpler way to find desired results using the arguments object. Arguments is a keyword that references the
- *          ( ) where we put the parameters as though it were an array. By this we can put multiple values into the 
- *          ( value1, value2, value3 ) and we can access those within the {} by use of argument[0] or argument[1].
- *          The bracket notation points to the next value after the comma. This is help with unknown unknowns. 
+/*      2.  
+ * 
+ */
+
+
+
+/*      3.  
+ * 
+ * 
+ */
+
+
+
+/*      4.   
+ * 
+ * 
+ */
+
+
+
+/*      5.  
+ * 
+ * 
+ */
+
+
+
+/*      6.  
+ * 
+ * 
+ */
+
+
+
+/*      7.  
  * 
  * 
  */
