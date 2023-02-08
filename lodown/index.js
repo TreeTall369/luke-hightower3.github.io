@@ -26,8 +26,8 @@ module.exports.each = each;
 /**
  * identity: returns input value unchanged
  * 
- * @param { any:value }: function takes in any value
- * @return { any:value}: function returns input value unchanged
+ * @param { any:value } value: function takes in any value
+ * @return { any:value }: function returns input value unchanged
  */
 
 function identity(value){
@@ -39,7 +39,7 @@ module.exports.identity = identity;
 /**
  * typeOf: this will give us a string stating the type of data
  * 
- *  @param { any:value }: function takes in a datatype, primitive or complex
+ *  @param { any:value } value: function takes in a datatype, primitive or complex
  *  @return { string }: this return a string representing the type of data
  * 
  * 
@@ -75,8 +75,8 @@ function typeOf(value){
 module.exports.typeOf = typeOf
 /**
  *  first: gives us portion of array from first position
- *  @param { Array }: Function takes in an array. 
- *  @param { Number }: Function take in a number.
+ *  @param { Array } collection: Function takes in an array. 
+ *  @param { Number } number: Function take in a number.
  *  @return { Array }: Function returns array from the beginning to index Number.
  */
 function first(array, number){
@@ -103,8 +103,8 @@ function first(array, number){
 module.exports.first = first
 /**
  * last : Gives us portion of array from last position.
- *  @param { Array }: Function takes in an array. 
- *  @param { Number }: Function take in a number.
+ *  @param { Array } collection: Function takes in an array. 
+ *  @param { Number } number: Function take in a number.
  *  @return { Array }: Function returns array from the end to index Number.
  */
 function last(array, number){
@@ -129,8 +129,8 @@ function last(array, number){
 module.exports.last = last
 /**
  * indexOf: we can find the index of certain values presumed to be in array
- *  @param { Array }: takes in array and number
- *  @param { Number }
+ *  @param { Array } collection: takes in array 
+ *  @param { Number } number: takes in a number
  *  @return { Array }: returns item at number index in array
  */
 function indexOf(array, value){
@@ -145,8 +145,8 @@ function indexOf(array, value){
 module.exports.indexOf = indexOf;
 /**
  * contains: This can detemine if an array contains a value;
- * @param { Array }: Function takes in an array.
- * @param { Any:value }: Function takes in a value.
+ * @param { Array } collection: Function takes in an array.
+ * @param { Any:value } action: Function takes in a value.
  * @return { Boolean }: Function returns boolean.
  * 
  * 
@@ -168,8 +168,8 @@ function contains(array, value){
 module.exports.contains = contains
 /**
  * each: this will perform an action on each item in a collection. Each does not have a return.
- * @param { collection }: takes in collection.
- * @param { Function }: Function takes in a function.
+ * @param { collection } collection: takes in collection.
+ * @param { Function } action: Function takes in a function.
  */
 function each(collection, func){
 
@@ -186,17 +186,12 @@ function each(collection, func){
             func(collection[key], key, collection)
         }
     }
-    
-
 }
 module.exports.each = each;
 /**
  * unique: this will removed duplicate items from an array
- * @param { any:value }: takes in array
- * @return { any:value}: return array with duplicates removed
- * 
- * 
- * 
+ * @param { Array } collection: Takes in an array.
+ * @return { Array }: return array with duplicates removed
  */
 function unique(array){
     let bank = []
@@ -211,11 +206,9 @@ function unique(array){
 module.exports.unique = unique;
 /**
  * filter: this will provide an array of all items passing a test
- * @param { any:value }: takes in an array and a function 
+ * @param { Array } collection: takes in an array.
+ * @param { Function } action: takes in a function.
  * @return { any:value}: returns array of items that pass function test
- * 
- * 
- * 
  */
 function filter(array, func){
     let trueArray = [];
@@ -233,11 +226,9 @@ return trueArray
 module.exports.filter = filter;
 /**
  * reject: this will produce an array of all items NOT passing a test
- * @param { any:value }: takes in an array and a function
- * @return { any:value}: return array with all items that did not pass test
- * 
- * 
- * 
+ * @param { Array } collection: takes in an array. 
+ * @param { Function } action: takes in a function. 
+ * @return { any:value}: return array with all items that did not pass test.
  */
 function reject(array, func){
 
@@ -249,18 +240,15 @@ function reject(array, func){
         }
     }
 
-
 return trueArray
 
 }
 module.exports.reject = reject
 /**
  * partition: this create subArrays based on conditions of a function 
- * @param { any:value }: takes in an array and function 
- * @return { any:value}: separates array into subarrays based on test in func
- * 
- * 
- * 
+ * @param { any:value }: takes in an array.
+ * @param { Function } action: takes in a function.
+ * @return { any:value}: separates array into subarrays based on test in function.
  */
 function partition(array, func){
   
@@ -279,8 +267,9 @@ function partition(array, func){
 module.exports.partition = partition;
 /**
  * map: this will return an array of all item updated by function
- * @param { any:value }: takes in a collection and function 
- * @return { any:value}: returns collection with items updated by func
+ * @param { collection } collection: takes in a collection and function 
+ * @param { Function } action: input is a function.
+ * @return { collection }: returns collection with items updated by func
  * 
  */
 function map(collection, func){
@@ -303,11 +292,9 @@ function map(collection, func){
 module.exports.map = map;
 /**
  * pluck: this returns an item from array update by function 
- * @param { any:value }: takes in an array and property
- * @return { any:value}: return array with element updated
- * 
- * 
- * 
+ * @param { Array } collection: takes in an array and property
+ * @param { property } value: takes in a value that is property
+ * @return { Array }: return array with element updated
  */
 function pluck(array, property){
      let test = _.map(array, function(element){
@@ -319,11 +306,9 @@ function pluck(array, property){
 module.exports.pluck = pluck;
 /**
  * every: determines if every item in collection passes a test
- * @param { any:value }: takes in collection and func
- * @return { any:value}: return boolean if all elements pass func
- * 
- * 
- * 
+ * @param { collection } collection: takes in collection.
+ * @param { Function } action: takes in a function.
+ * @return { any:value}: return boolean if all elements pass function
  */
 function every(collection, func){
     if (Array.isArray(collection)){
