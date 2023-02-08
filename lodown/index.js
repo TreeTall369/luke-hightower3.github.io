@@ -352,9 +352,9 @@ function every(collection, func){
 module.exports.every = every;
 /**
  * some: determines if just one item passes a test from the array
- * @param { any:value }: takes in collection and func
+ * @param { collection } collection: takes in collection and func
+ * @param { Function } action: taking in a function.
  * @return { any:value}: return true if one element passes func
- * 
  */
 function some(collection, func){
     if (Array.isArray(collection)){
@@ -398,11 +398,10 @@ function some(collection, func){
 module.exports.some = some;
 /**
  * reduce: takes whole array and delivers single result using func inter element
- * @param { any:value }: takes in collectiom, function, inital value
+ * @param { collection }: takes in a collection.
+ * @param { Function } action: takes in a function.
+ * @param { Any:value } value: takes in a value for seed
  * @return { any:value}: returns singular value from collection
- * 
- * 
- * 
  */
 function reduce(collection, func, seed){
     let result
@@ -426,11 +425,10 @@ return result;
 module.exports.reduce = reduce;
 /**
  * extend: this makes a singel object from multiple that allow overlapping keys to not be duplicated
- * @param { any:value }: takes in multiple objects
+ * @param { collection } collection: takes in first object.
+ * @param { collection } collection: takes in next object.
+ * @param { collection } collection: takes in last object.
  * @return { any:value}: returns all objects joined into one
- * 
- * 
- * 
  */
 function extend(object1, object2, object3){
     if (object3 === undefined){
