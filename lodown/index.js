@@ -307,7 +307,7 @@ function pluck(array, property){
 }
 module.exports.pluck = pluck;
 /**
- * every: determines if every item in collection passes a test
+ * every: will iterate over the collection and determine if every item in collection passes a test
  * @param { collection } collection: takes in collection.
  * @param { Function } func: takes in a function.
  * @return { any:value}: return boolean if all elements pass function
@@ -353,7 +353,7 @@ function every(collection, func){
 }
 module.exports.every = every;
 /**
- * some: determines if just one item passes a test from the array
+ * some: This will iterate over a collection and determine if just one item passes a test from the array.
  * @param { collection } collection: takes in collection and func
  * @param { Function } func: taking in a function.
  * @return { any:value}: return true if one element passes func
@@ -399,7 +399,7 @@ function some(collection, func){
 }
 module.exports.some = some;
 /**
- * reduce: takes whole array and delivers single result using func inter element
+ * reduce: Iterates over an entire array and delivers single result by applying function to all entries as they accumulate. 
  * @param { collection } collection: takes in a collection.
  * @param { Function } func: takes in a function.
  * @param { Any:value } seed: takes in a value for seed
@@ -426,7 +426,7 @@ return result;
 }
 module.exports.reduce = reduce;
 /**
- * extend: this makes a singel object from multiple that allow overlapping keys to not be duplicated
+ * extend: This will create a single object from multiple and allows overlapping keys to not be duplicated.
  * @param { collection } object1: takes in first object.
  * @param { collection } object2: takes in next object.
  * @param { collection } object3: takes in last object.
