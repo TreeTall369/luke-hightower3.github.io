@@ -1,7 +1,5 @@
 /**
- *          STRING MANIPULATION: 
- * 
- *            with operators, with string methods
+ *          STRING MANIPULATION:
  * 
  *     0.   Strings are a crucial part of JavaScript. Strings, like arrays
  *          have indices starting at zer0 large from left to right. We can use for loops to 
