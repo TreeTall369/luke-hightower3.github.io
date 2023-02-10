@@ -1,79 +1,104 @@
 /**
  *          FUNCTIONS:
  *  
- *      the first two phases using fx's. Declare then Invoke/Call 
- *      whats the difference between parameters and arguments passed to a function
- *      whats the syntax for a named function?
- *      how do we assign a function to a variable?
- *      How do we specify inputs and outputs
- *      Scope: functions can see and modify variable in parent and global scopes, inverse not true
- *      Closures: functions form closures arpund the data they house. if an object returned from the function 
- *      and is held in memory somewhere (referenced), that closrue stays alive, and data can contunue to exist in these closures!
- * 
- *      0.  Functions are the most profound aspect of JavaScript. Functions are declared, in this phase they are 
- *          are statement and not an expression. A function is declared to draw together various needed actions
- *          and re-use what is encapsulated in the function. Functions eliminate 're-writing' code over and over. 
- *          
+ *      0.  Functions are one of the most profound aspects of JavaScript. We use function to encapulate actions
+ *          we wish to perform. By doing this we are able to consolidate our code by using functions instead of 
+ *          re-writing or redesign code over and over. Functions can take in data and output data as well, though
+ *          it does not have to do these things. 
  */
 
+/**     1.  A function has two phases. The first is the declaration of the function. The second is the invokation.
+ *
+ *  */        
 
+// declaration
+let action = function(value){
+    console.log(value)
+}
 
+// invokation
+let test = action('sample')
+console.log(test)
 
-/*      1.  This version sets the function name in variable form. The parameters are then indicated within the () and 
- *          the code block in written within the {}. A function declared like this allows us to see the function assigned
- *          to the variable which aids in following the passage of functions through variable assignments. While written 
- *          like this: exampleFx; the function is an object but not invoked. It remains a statement not expression. This 
- *          is the second version of :
- * 
- *          Calling a function or invoking a function, or the expression of the function look like this:
- * 
- *            function exampleFx(parameterOne, parameterTwo){ 
- *                  var testFx = parameterOne + ' and ' + parameterTwo;
- *                  return  testFx;
- *                      }
- *                 
- *            var favDishes = exampleFx('pumpkin pie', 'whipped cream');
- *            console.log(favDishes);
- */
+/**     2.  A function we declare can have parameters. These are the values that the function takes in. When we
+ *          invoke the function we must have arguments to fill the place of the parameters. Functions can have any
+ *          number of parameters, including default parameters in which the value is delcare in the argument.
+ *  */        
+            // the function is being declare and with it the parameter is created
+let sample = function(param){
+    console.log(param)
+}
 
+sample('test'); // here the argument goes in place of the parameter. the argument is 'test'
 
-
-
-/*      2.  
+/*      3.  There are named functions, anonymous functions and functions assigned to a variable.
  * 
  */
 
+// named function
+function named(value){
+    console.log(value)
+}
+
+// assigned function
+let tony = function(number){
+    console.log('tony is '+ number + ' years old')
+
+        // anonymous function
+    return function(number){
+        return number++
+    }
+}
 
 
-/*      3.  
+/**
  * 
- * 
+ *      4.  We assign a function to a variable with the assignment operator. This allows us to call that
+ *          function with () or log the function to the console. Above is an example of function assignment.
+ *         
+ *  */      
+
+
+/*      5.  The inputs of a function are tied to the parameters and then the arguments. The outputs of the
+            function will occur based on the code of the function and in particular the use of the return
+            keyword. A function does not have to return anything, nor does it have to take in a parameter.
+            It can simply log something to the console or other simple actions that dont have a return.
+ */
+            // output only
+        let outputs = function(){
+            return 42;
+        }
+            // no input or output
+        let logFx = function(){
+            console.log('you can do it!')
+        }
+
+/*      6.  Scope regarding functions can be very helpful. A variable declare within a function with var is 
+            accessible at global scope. However the let and const keywords forbade this. The let keyword used
+            in the global scope is reachable from within a functional scope. The const keyword keeps from any
+            reassignment. 
+
+ *          The use of variable assignment with the let keyword in functions allows us to cleanly write code without 
+ *          entangling varibles in difffernt functions. Returning a function within a function that gives access to 
+ *          a varible in the parent scope is a closure. This however allows the variable to be accessed by returning
+ *          function within the function. 
  */
 
+            let choice = function(){
+                    // functional scope
+                let count = 0
+                    // returns function
+                return function(){
+                        // creates closure 
+                    return count++
+                }
+            }
+                // assign first invokation
+            let example = choice()
+                    // invoke function again to access count after return
+            console.log(example())
 
-
-/*      4.   
- * 
- * 
- */
-
-
-
-/*      5.  
- * 
- * 
- */
-
-
-
-/*      6.  
- * 
- * 
- */
-
-
-
-/*      7.  
- * 
- * 
+/*      7.  Closure as shown above gives us the ability to access varible count declared in choice function after
+            the choice function has been returned. Choice is invoked which returns the anon function, that is
+            assigned to example variable which is invoked and logged to the console.
  */
