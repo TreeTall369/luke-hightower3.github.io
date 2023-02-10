@@ -45,6 +45,7 @@ const funcLet = function(x, y){ // using const
         console.log(innerValue) // logging from within function 
         return keywordLet = x ** y // returning keyword Let
 }
+
 // this will throw an error if un-commented-out. Why? 
 //console.log(innerValue) 
 // logging inner value will throw error because globally, it is not defined
@@ -100,7 +101,7 @@ console.log(exOne, exTwo, exThree) // tests logged to console
             console.log(hoistingExample);     
 
 /**         
- *          In this example we see our script as JS is going to compile it. The var is declared without
+ *      4.  In this example we see our script as JS is going to compile it. The var is declared without
  *          a value. Then the function. Then the var assignment in the the gloabl window. These examples 
  *          will log first 'words' then the function is invoked and then 'letters'. We can rearrange these and
  *          the same will come of it because this is how they are hoisted. 

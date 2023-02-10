@@ -7,10 +7,13 @@
  *          length, etc). Certain details need to be clarified for functions to work effectively.
  *          
  */
+               //this is the if statement
             if (x === 1){
                // doSomething();
+               // this is the else if statement
             } else if ( x === 2){
                // doSomethingDifferent();
+               // this is the else statement
             } else {
                // doJustThis();
             }
